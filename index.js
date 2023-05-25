@@ -2,6 +2,7 @@ import express from "express";
 // import bodyParser from "body-parser";
 import articles from "./routes/articles.js";
 import exercise from "./routes/exercise.js";
+import userAccount from "./routes/userAccount.js";
 import mongoose from "mongoose";
 
 import cors from "cors";
@@ -27,6 +28,7 @@ app.get("/api/v1/", welcome);
 
 app.use("/api/v1/articles", articles);
 app.use("/api/v1/names", exercise);
+app.use("/api/v1/register", userAccount);
 
 const port = 4000;
 

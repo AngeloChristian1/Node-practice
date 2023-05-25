@@ -77,7 +77,7 @@ const readArticlesLimited = async (req, res) => {
 };
 const updateArticle = async (req, res) => {
   try {
-    let articleId = req.query.id;
+    let articleId = req.params.id;
     let updates = req.body;
     let response = await articleSchema.find({ _id: articleId });
     if (response.length == 0) {
@@ -109,7 +109,7 @@ const updateArticle = async (req, res) => {
 };
 const deleteArticle = async (req, res) => {
   try {
-    let articleId = req.query.id;
+    let articleId = req.params.id;
 
     let response = await articleSchema.find({ _id: articleId });
     if (response.length == 0) {
